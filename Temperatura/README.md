@@ -1,0 +1,9 @@
+Exercício
+ Criar um vetor para guardar 50 temperaturas
+ int temps[50];
+ As temperaturas variam entre -100 e 100
+ Em vez de int, usar o tamanho mais econômico
+ Ler as 50 temperaturas para o vetor
+ Calcular a média
+ Exibir a quantidade de leituras acima da média
+ Subir para o GitHub
