@@ -18,7 +18,6 @@ int eh_primo(int num){
 int todos_os_primos(int num){
 	int i;
 	for (i = 1; i <= num; i++){
-		eh_primo(i);
 		if (eh_primo(i) == 1){
 			printf("%d\n",i);		
 		}	
