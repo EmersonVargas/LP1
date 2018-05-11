@@ -20,7 +20,6 @@ int main(){
 	int n;
 	printf("Digite um numero: ");
 	scanf("%d",&n);
-	eh_primo(n);
 	if (eh_primo(n) == 1){
 		printf("O numero %d eh primo\n",n);	
 	}
