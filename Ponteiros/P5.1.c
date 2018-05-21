@@ -10,8 +10,8 @@ maior valor.
 
 #include<stdio.h>
 
-int subtrai(int* valor){
-	*valor = *valor - 50;
+int subtrai(int* p){
+	*p = *p - 50;
 }
 
 int main(){
@@ -22,11 +22,9 @@ int main(){
 	scanf("%d",&b);
 	printf("%d - %d\n",a,b);
 	if (a > b){
-		int* p = &a;
-		subtrai(p);
+		subtrai(&a);
 	}else{
-		int* p = &b;
-		subtrai(p);		
+		subtrai(&b);		
 	}
 	printf("%d - %d\n",a,b);	
 	return 0;
