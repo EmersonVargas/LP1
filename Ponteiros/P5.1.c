@@ -10,6 +10,10 @@ maior valor.
 
 #include<stdio.h>
 
+int subtrai(int* valor){
+	*valor = *valor - 50;
+}
+
 int main(){
 	int a, b;
 	printf("Digite primeiro valor: ");
@@ -19,10 +23,10 @@ int main(){
 	printf("%d - %d\n",a,b);
 	if (a > b){
 		int* p = &a;
-		*p = *p - 50;
+		subtrai(p);
 	}else{
 		int* p = &b;
-		*p = *p - 50;		
+		subtrai(p);		
 	}
 	printf("%d - %d\n",a,b);	
 	return 0;
