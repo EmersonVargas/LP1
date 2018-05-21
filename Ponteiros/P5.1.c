@@ -10,8 +10,14 @@ maior valor.
 
 #include<stdio.h>
 
-int subtrai(int* p){
-	*p = *p - 50;
+int subtrai(int* x, int* y){
+	if (*x > *y){
+		int* p = x;
+		*p = *p - 50;		
+	}else{
+		int* p = y;	
+		*p = *p - 50;
+	}
 }
 
 int main(){
@@ -21,11 +27,7 @@ int main(){
 	printf("Digite segundo valor: ");
 	scanf("%d",&b);
 	printf("%d - %d\n",a,b);
-	if (a > b){
-		subtrai(&a);
-	}else{
-		subtrai(&b);		
-	}
+	subtrai(&a,&b);
 	printf("%d - %d\n",a,b);	
 	return 0;
 }
