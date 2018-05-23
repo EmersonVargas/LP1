@@ -21,24 +21,18 @@ void compra(int* conta, int valor){
 
 int main(){
 	int conta1, conta2, valor = 500;
+	int* conta;
 	printf("Digite o saldo da conta1: ");
 	scanf("%d",&conta1);
 	printf("Digite o saldo da conta2: ");
 	scanf("%d",&conta2);
 	if (conta1 >= conta2){
-		printf("Saldo inicial da conta1 = %d\n", conta1);
-		printf("Saldo inicial da conta2 = %d\n", conta2);		
-		printf("Conpra efetuada na conta1. \n");		
-		compra(&conta1, valor);
-
-		printf("Saldo atualizado da conta1 = %d\n",conta1);
+		conta = &conta1;
 	}else{
-		printf("Saldo inicial da conta1 = %d\n", conta1);
-		printf("Saldo inicial da conta2 = %d\n", conta2);		
-		printf("Conpra efetuada na conta2. \n");
-		compra(&conta2, valor);
-		
-		printf("Saldo atualizado da conta2 = %d\n",conta2);
+		conta = &conta2;
 	}
+	compra(conta, valor);
+	printf("Saldo da conta1 = %d\n", conta1);
+	printf("Saldo da conta2 = %d\n", conta2);		
 	return 0;
 }

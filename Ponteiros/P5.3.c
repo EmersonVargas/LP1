@@ -6,6 +6,7 @@ e efetue as compras corretamente, sempre usando a
 conta com o maior saldo.
 **A cada compra o programa deve exibir os saldos 
 das duas contas.*/
+
 #include<stdio.h>
 
 void compra(int* conta, int valor){
@@ -14,8 +15,8 @@ void compra(int* conta, int valor){
 }
 
 int main(){
-	int conta1, conta2, compras[] = {100, 50, 80, 30 ,20};
-	int i;	
+	int i, conta1, conta2, compras[] = {100, 50, 80, 30 ,20};
+	int* conta;	
 	printf("Digite o saldo da conta1: ");
 	scanf("%d",&conta1);
 	printf("Digite o saldo da conta2: ");
@@ -23,15 +24,14 @@ int main(){
 	for ( i = 0; i < 5; i++){	
 		if (conta1 >= conta2){		
 			printf("Compra efetuada na conta1. \n");
-			compra(&conta1, compras[i]);		
-			printf("Saldo da conta1 = %d\n",conta1);
-			printf("Saldo da conta2 = %d\n",conta2);
+			conta = &conta1;		
 		}else{		
 			printf("Compra efetuada na conta2. \n");
-			compra(&conta2, compras[i]);
-			printf("Saldo da conta1 = %d\n",conta1);
-			printf("Saldo da conta2 = %d\n",conta2);
+			conta = &conta2;
 		}
+		compra(conta, compras[i]);
+		printf("Saldo da conta1 = %d\n",conta1);
+		printf("Saldo da conta2 = %d\n",conta2);
 	}
 	return 0;
 }
