@@ -2,7 +2,7 @@ Projeto final
 
 Controle de estoque
 
-Descriçã:
+Descrição:
 
 Sistema para controle de estoque, entrada, saída, consultas e alterações dos produtos em geral.
 Gerar arquivo .txt
