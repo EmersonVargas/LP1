@@ -9,18 +9,21 @@ anterior. */
 
 #include<stdio.h>
 
-struct data {
-	char datas[8];
+struct caracteristicas {
+	char fabricante[20];
+	char modelo [20];
 };
 struct produto {
 	char nome[15];
 	int quantidade;
-	struct data dts;
+	struct caracteristicas ct;
 };
 
-void preenche2(struct data* dt){
-	printf("Digite o dia/mes/ano (ddmmaaaa)");
-	scanf("%s",(*dt).datas);
+void preenche2(struct caracteristicas* ct){
+	printf("Digite o fabricante: ");
+	scanf("%s",(*ct).fabricante);
+	printf("Digite o modelo: ");
+	scanf("%s",(*ct).modelo);
 }
 
 void preenche(struct produto* item){
@@ -29,17 +32,18 @@ void preenche(struct produto* item){
 	scanf("%s",(*item).nome);
 	printf("Digite a quantidade: ");
 	scanf("%d",&((*item).quantidade));
-	preenche2(&(*item).dts);
+	preenche2(&(*item).ct);
 }
+
 
 int main(){
 	struct produto p1;
 	struct produto p2;
 	preenche(&p1);
 	preenche(&p2);
-	printf("Produto 1: %s - Quantidade: %d\n",p1.nome, p1.quantidade);
-	printf("Data: %s\n",p1.dts.datas);
-	printf("Produto 2: %s - Quantidade: %d\n",p2.nome, p2.quantidade);
-	printf("Data: %s\n",p2.dts.datas);	
+	printf("\nProduto 1: %s - Quantidade: %d\n",p1.nome, p1.quantidade);
+	printf("Fabricante: %s - Modelo: %s\n",p1.ct.fabricante, p1.ct.modelo);
+	printf("\nProduto 2: %s - Quantidade: %d\n",p2.nome, p2.quantidade);
+	printf("Fabricante: %s - Modelo: %s\n\n",p2.ct.fabricante, p2.ct.modelo);	
 	return 0;
 }
